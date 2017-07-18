@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+      <meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+  		<meta name="viewport" content="width=300, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+  		<meta name="ad.size" content = "width=300, height=250">
+
+		  <title>ECU-196: Auto 300x250</title>
+
+		  <script src="https://s0.2mdn.net/ads/studio/Enabler.js"> </script>
+
+		<style>
+			/* classes */
+			.pos-absolute { position: absolute; }
+
+			.animated-content {
+				position: absolute;
+				overflow: hidden;
+				width:300px;
+				height:250px;
+				top:0;
+			}
+
+			.mask {
+				position: absolute;
+				overflow: hidden;
+			}
+
+			/* IDs */
+			#bg-exit { background-color:#fff; cursor: pointer; z-index: 99999; }
+			#banner { background-color:#222; overflow:hidden; }
+			#border { border:1px solid #222; opacity:0; }
+			#banner:hover { cursor: hand; }
+
+			#hero1 { background: transparent url('images/BG1.jpg') no-repeat 0px 0px; top: 0; left: 0; opacity: 0; height: 300px; transform-origin: left bottom;}
+
+			#hero2 { background: transparent url('images/BG2.jpg') no-repeat 0px 0px; top: 0; left: 0; opacity: 0; height: 300px; transform-origin: left bottom;}
+
+      #copy-mask { overflow: hidden; width: 300px; height: 99px; position: absolute; top: 47px;}
+
+			#copy01 { background: transparent url('images/sprite.png') no-repeat 0 -49px; height: 30px; top: 160px; opacity: 0;}
+			#copy02 { background: transparent url('images/sprite.png') no-repeat 0 -74px; height: 46px;  top: 160px; opacity: 0;}
+
+			#copy03 { background: transparent url('images/sprite.png') no-repeat 0 -117px; height: 45px;  top: 160px; opacity: 0}
+			#copy04 { background: transparent url('images/sprite.png') no-repeat 0 -162px; height: 27px;  top: 160px; opacity: 0}
+
+			#copy05 { background: transparent url('images/sprite.png') no-repeat 0 -186px; height: 26px;  top: 160px; opacity: 0}
+			#copy06 { background: transparent url('images/sprite.png') no-repeat 0 -214px; height: 46px;  top: 160px; opacity: 0}
+
+      #logo-ecu { background: transparent url('images/sprite.png') no-repeat 0 -263px; height: 81px;  top: 200px; opacity: 0}
+      #cta { background: transparent url('images/sprite.png') no-repeat 0 -368px; height: 52px;  top: 200px; opacity: 0}
+
+			#ornate-bottom { background: transparent url('images/sprite.png') no-repeat 0 -23px; height: 23px; opacity: 0; top: 200px;}
+			#ornate-top { background: transparent url('images/sprite.png') no-repeat 0 0; height: 23px; opacity: 0}
+
+
+		</style>
+    </head>
+
+    <body>
+    	<div id = "container">
+    		<div id = "border" class = "pos-absolute"></div>
+	    	<div id = "banner" class = "pos-absolute">
+		    	<div id = "content" class = "pos-absolute">
+
+		    		<div id = "hero-wrapper" class = "animated-content">
+		    			<div id = "hero1" class = "animated-content"></div>
+		    			<div id = "hero2" class = "animated-content"></div>
+		    		</div>
+
+            <div id="copy-mask">
+              <div id = "copy02" class = "animated-content"></div>
+              <div id = "copy01" class = "animated-content"></div>
+
+              <div id = "copy03" class = "animated-content"></div>
+              <div id = "copy04" class = "animated-content"></div>
+
+              <div id = "copy05" class = "animated-content"></div>
+              <div id = "copy06" class = "animated-content"></div>
+            </div>
+
+            <div id = "logo-ecu" class = "animated-content"></div>
+            <div id = "tagline" class = "animated-content"></div>
+            <div id = "cta" class = "animated-content"></div>
+
+				    <div id = "ornate-bottom" class = "animated-content"></div>
+				    <div id = "ornate-top" class = "animated-content"></div>
+
+		    	</div>
+	    	</div>
+
+	    	<div id="bg-exit" class = "pos-absolute"></div>
+	    </div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+		<script src="js/jquery.transit.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/banner.js"></script>
+		<script type="text/javascript">
+
+			var clickTag = "https://www.elevationscu.com/";
+
+			$(document).ready(function()
+			{
+				if (Enabler.isInitialized())
+				{
+					enablerInitComplete();
+				} else {
+					Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitComplete);
+				}
+
+				function enablerInitComplete()
+				{
+					if (Enabler.isPageLoaded())
+					{
+					    pageLoadComplete();
+					} else {
+						Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, pageLoadComplete);
+					}
+
+					function pageLoadComplete()
+					{
+					    var banner = new Banner();
+						banner.render();
+					}
+				}
+			});
+
+		</script>
+    </body>
+</html>

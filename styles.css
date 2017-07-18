@@ -1,0 +1,86 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  width: 100%; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  text-align: center; }
+
+.sidebar {
+  border-right: 1px solid #ccc;
+  float: left;
+  height: 100%;
+  overflow: auto;
+  padding: 0 40px;
+  width: 200px;
+  text-align: left; }
+  .sidebar .logo {
+    display: block;
+    margin: 50px auto;
+    width: 100%; }
+  .sidebar h1 {
+    font-size: 14px; }
+  .sidebar h2 {
+    font-size: 12px; }
+  .sidebar ul {
+    list-style: none;
+    padding: 0; }
+    .sidebar ul li {
+      padding: 0 0 10px; }
+      .sidebar ul li a {
+        color: #d36135;
+        font-size: 12px; }
+        .sidebar ul li a:hover {
+          text-decoration: none; }
+        .sidebar ul li a.done {
+          color: #7fb069;
+          display: block; }
+
+.iframe {
+  height: 100%;
+  overflow: auto; }
+  .iframe iframe {
+    border: 0;
+    height: 100%;
+    width: 100%; }
+  .iframe .loading {
+    background: url("./images/loading.gif") center no-repeat;
+    display: none;
+    height: 100%;
+    left: 140px;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+
+.desktop {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
+  display: none;
+  height: 100%;
+  left: 0;
+  padding-top: 150px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999; }
+  .desktop h1 {
+    font-size: 20px; }
+  @media screen and (max-width: 780px) {
+    .desktop {
+      display: block; } }
+
+#hide {
+  display: none;
+}
+
+h2 {
+  cursor: pointer;
+  color: #ac451e;
+}
+
+h6 {
+  color: #00577d;
+}
