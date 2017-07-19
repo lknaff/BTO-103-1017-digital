@@ -28,15 +28,12 @@
 	{
 		this.__container = $("#container");
 		this.__border = $("#border");
-		this.__hero2 = $("#hero2");
+		this.__cta = $("#cta");
+		this.__hover = $("#hover");
 		this.__banner = $("#banner");
 		this.__content = $("#content");
 
 		this.__heroWrapper = $("#hero-wrapper");
-
-		this.__ornateTop = $("#ornate-top");
-		this.__ornateBottom = $("#ornate-bottom");
-
 		this.__bgExit = $("#bg-exit");
 	};
 
@@ -67,185 +64,42 @@
 	{
     let scene1     = anime.timeline();
 		let copy1Scene = anime.timeline();
-		let copy2Scene = anime.timeline();
-		let copy3Scene = anime.timeline();
 		let finalScene = anime.timeline();
 
     scene1
       .add({
-        targets: '#hero1',
+        targets: '#bg',
         opacity: 1,
 				offset: 0
-      })
-      .add({
-				targets: '#ornate-top',
-				translateY: 25,
-				easing: 'easeOutExpo',
-				opacity: 1,
-				offset: 0
-      })
-			.add({
-				targets: '#ornate-bottom',
-				translateY: -60,
-				easing: 'easeOutExpo',
-				opacity: 1,
-				offset: 0
-			});
+      });
 
 			copy1Scene
 			.add({
 				targets: '#copy01',
-				translateY: -145,
+				translateX: -360,
 				opacity: 1,
 				elasticity: 100,
 				offset: 400
 			})
 			.add({
 				targets: '#copy02',
-				translateY: -119,
+				translateX: 319,
 				elasticity: 100,
 				opacity: 1,
 				offset: 500
 			})
-			.add({
-				targets: '#copy01',
-				translateY: -1000,
-				easing: 'easeInOutCubic',
-				elasticity: 100,
-				offset: 3000
-			})
-			.add({
-				targets: '#copy02',
-				translateY: -1000,
-				easing: 'easeInOutCubic',
-				elasticity: 100,
-				offset: 3100
-			});
-
-		copy2Scene
-			.add({
-				targets: '#copy03',
-				translateY: -147,
-				opacity: 1,
-				elasticity: 100,
-				offset: 3500
-			})
-			.add({
-				targets: '#copy04',
-				translateY: -100,
-				elasticity: 100,
-				opacity: 1,
-				offset: 3600
-			})
-			// .add({
-			// 	targets: '#hero2',
-			// 	opacity: {
-			// 		value: 1,
-			// 		duration: 1000,
-			// 		easing: 'linear',
-			// 	},
-			// 	offset: 3000
-			// })
-			// .add({
-			// 	targets: '#hero2',
-			// 	opacity: {
-			// 		value: 0,
-			// 		duration: 1000,
-			// 		easing: 'linear',
-			// 	},
-			// 	offset: 6100
-			// })
-			.add({
-				targets: '#copy03',
-				translateY: -1000,
-				easing: 'easeInOutCubic',
-				elasticity: 100,
-				offset: 6100
-			})
-			.add({
-				targets: '#copy04',
-				translateY: -1000,
-				easing: 'easeInOutCubic',
-				elasticity: 100,
-				offset: 6200
-			});
-
-		copy3Scene
-			.add({
-				targets: '#copy05',
-				translateY: -146,
-				opacity: 1,
-				elasticity: 100,
-				offset: 6600
-			})
-			.add({
-				targets: '#copy06',
-				translateY: -115,
-				elasticity: 100,
-				opacity: 1,
-				offset: 6700
-			})
-			.add({
-				targets: '#ornate-top',
-				translateY: -1000,
-				opacity: 0,
-				easing: 'easeInOutCubic',
-				elasticity: 100,
-				offset: 9200
-			})
-			.add({
-				targets: '#copy05',
-				translateY: -1000,
-				opacity: 0,
-				easing: 'easeInOutCubic',
-				elasticity: 100,
-				offset: 9300
-			})
-			.add({
-				targets: '#copy06',
-				translateY: -1000,
-				opacity: 0,
-				easing: 'easeInOutCubic',
-				elasticity: 100,
-				offset: 9400
-			})
-			.add({
-				targets: '#ornate-bottom',
-				translateY: -1000,
-				opacity: 0,
-				easing: 'easeInOutCubic',
-				elasticity: 100,
-				offset: 9500
-			});
-
 
 		finalScene
 			.add({
-				targets: '#logo-ecu',
-				translateY: -140,
-				opacity: 1,
-				elasticity: 100,
-				offset: 9900
-			})
-			.add({
 				targets: '#cta',
-				translateY: -27,
+				translateY: -12,
 				elasticity: 100,
 				opacity: 1,
-				offset: 10000
-			})
-			.add({
-				targets: '#hero2',
-				opacity: {
-					value: 1,
-					duration: 1000,
-					easing: 'linear',
-				},
-				offset: 9500
+				offset: 2000
 			});
 
 		var banner = this;
-		setTimeout(function(){banner.end();}, 10000);
+		setTimeout(function(){banner.end();}, 2100);
 
 	};
 
@@ -295,12 +149,14 @@
 
 	Banner.prototype.onMouseOver = function()
 	{
-		animate(0, this.__hero2, {opacity:1}, 500, "easeOutQuad");
+		animate(0, this.__hover, {opacity:1}, 0, "easeOutQuad");
+		animate(0, this.__cta, {opacity:0}, 0, "easeOutQuad");
 	};
 
 	Banner.prototype.onMouseOut = function()
 	{
-		animate(25, this.__hero2, {opacity:0}, 500, "easeOutQuad");
+		animate(25, this.__hover, {opacity:0}, 0, "easeOutQuad");
+		animate(25, this.__cta, {opacity:1}, 0, "easeOutQuad");
 	};
 
 	Banner.prototype.clickThrough = function()
