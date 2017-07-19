@@ -95,11 +95,11 @@
 				translateY: -12,
 				elasticity: 100,
 				opacity: 1,
-				offset: 1500
+				offset: 2000
 			});
 
 		var banner = this;
-		setTimeout(function(){banner.end();}, 2000);
+		setTimeout(function(){banner.end();}, 2100);
 
 	};
 
