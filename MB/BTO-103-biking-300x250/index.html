@@ -32,15 +32,16 @@
 			#border { border:1px solid #222; opacity:0; }
 			#banner:hover { cursor: hand; }
 
-			#bg { background: transparent url('images/BG.jpg') no-repeat 0px 0px; top: 0; left: 0; opacity: 0; height: 300px; transform-origin: left bottom;}
+			#bg { background: transparent url('images/BG.jpg') no-repeat 0px 0px; top: 0px; left: 0px; opacity: 0; height: 270px; width: 320px; transform-origin: left bottom;}
+			#bg2 { background: transparent url('images/BG2.png') no-repeat 0px 0px; top: 0px; left: 0px; opacity: 0; height: 250px; transform-origin: left bottom;}
 
       #copy-mask { overflow: hidden; width: 300px; height: 99px; position: absolute; top: 0px;}
 
-			#copy01 { background: transparent url('images/sprite.png') no-repeat 0 -8px; height: 44px; top: 7px; left: 360px; opacity: 0;}
-			#copy02 { background: transparent url('images/sprite.png') no-repeat 0 -57px; height: 46px;  top: 42px; left: -300px; opacity: 0;}
+			#copybg { background: transparent url('images/sprite.png') no-repeat 0 -8px; height: 100px; top: 0px; left: -300px; opacity: 0;}
+			#copy { background: transparent url('images/sprite.png') no-repeat 0 -106px; height: 85px;  top: 10px; left: -300px; opacity: 0;}
 
-      #cta { background: transparent url('images/sprite.png') no-repeat 0 -111px; height: 39px;  top: 200px; opacity: 0}
-      #hover { background: transparent url('images/sprite.png') no-repeat 0 -150px; height: 39px;  top: 183px; opacity: 0}
+      #cta { background: transparent url('images/sprite.png') no-repeat 0 -191px; height: 34px;  top: 200px; opacity: 0}
+      #hover { background: transparent url('images/sprite.png') no-repeat 0 -225px; height: 39px;  top: 188px; opacity: 0}
 
 		</style>
     </head>
@@ -53,11 +54,12 @@
 
 		    		<div id = "hero-wrapper" class = "animated-content">
 		    			<div id = "bg" class = "animated-content"></div>
+		    			<div id = "bg2" class = "animated-content"></div>
 		    		</div>
 
             <div id="copy-mask">
-              <div id = "copy01" class = "animated-content"></div>
-              <div id = "copy02" class = "animated-content"></div>
+              <div id = "copybg" class = "animated-content"></div>
+              <div id = "copy" class = "animated-content"></div>
             </div>
 
             <div id = "cta" class = "animated-content"></div>
