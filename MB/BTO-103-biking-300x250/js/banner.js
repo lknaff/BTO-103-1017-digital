@@ -90,7 +90,7 @@
 			copyScene
 			.add({
 				targets: '#copybg',
-				translateX: 300,
+				translateX: 279,
 				opacity: 1,
 				elasticity: 100,
 				offset: 400
