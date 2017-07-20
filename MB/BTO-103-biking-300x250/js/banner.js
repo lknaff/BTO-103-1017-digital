@@ -63,7 +63,7 @@
 	Banner.prototype.showScene = function()
 	{
     let scene1     = anime.timeline();
-		let copy1Scene = anime.timeline();
+		let copyScene  = anime.timeline();
 		let finalScene = anime.timeline();
 
     scene1
@@ -71,23 +71,37 @@
         targets: '#bg',
         opacity: 1,
 				offset: 0
-      });
-
-			copy1Scene
+      })
+      .add({
+        targets: '#bg2',
+        opacity: 1,
+				offset: 0
+      })
 			.add({
-				targets: '#copy01',
-				translateX: -360,
+				targets: '#bg',
+				translateX: {
+          value: -15,
+          duration: 3500,
+          easing: 'linear',
+        },
+				offset: 0
+			});
+
+			copyScene
+			.add({
+				targets: '#copybg',
+				translateX: 300,
 				opacity: 1,
 				elasticity: 100,
 				offset: 400
 			})
 			.add({
-				targets: '#copy02',
-				translateX: 319,
+				targets: '#copy',
+				translateX: 300,
 				elasticity: 100,
 				opacity: 1,
 				offset: 500
-			})
+			});
 
 		finalScene
 			.add({
