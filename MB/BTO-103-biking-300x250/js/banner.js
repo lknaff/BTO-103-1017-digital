@@ -151,26 +151,19 @@
 			}
 			banner.onMouseOver();
 		});
-		this.__bgExit.mouseout(function()
-		{
-			if(banner.__allowHoverEffect == false)
-			{
-				return;
-			}
-			banner.onMouseOut();
-		});
-	};
+}
 
 	Banner.prototype.onMouseOver = function()
 	{
-		animate(0, this.__hover, {opacity:1}, 0, "easeOutQuad");
-		animate(0, this.__cta, {opacity:0}, 0, "easeOutQuad");
-	};
-
-	Banner.prototype.onMouseOut = function()
-	{
-		animate(25, this.__hover, {opacity:0}, 0, "easeOutQuad");
-		animate(25, this.__cta, {opacity:1}, 0, "easeOutQuad");
+		anime({
+			targets: '#cta',
+			scale: 1.1,
+			translateY: -10,
+			direction: 'alternate',
+			duration: 200,
+			easing: 'linear',
+			loop: 1
+		});
 	};
 
 	Banner.prototype.clickThrough = function()
