@@ -158,10 +158,11 @@
 		anime({
 			targets: '#cta',
 			scale: 1.1,
-			translateY: -10,
+			translateY: 0,
 			direction: 'alternate',
-			duration: 200,
-			easing: 'linear',
+			easing: 'easeOutQuart',
+			elasticity: 700,
+			duration: 100,
 			loop: 1
 		});
 	};
