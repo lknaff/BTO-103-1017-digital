@@ -118,7 +118,7 @@
 				easing: 'myCustomEasingName',
 				elasticity: 700,
 				duration: 500,
-				offset: 3500
+				offset: 2100
 			});
 
 		var banner = this;
