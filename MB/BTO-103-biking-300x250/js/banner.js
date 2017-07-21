@@ -162,7 +162,7 @@
 			direction: 'alternate',
 			easing: 'easeOutQuart',
 			elasticity: 700,
-			duration: 100,
+			duration: 125,
 			loop: 1
 		});
 	};
