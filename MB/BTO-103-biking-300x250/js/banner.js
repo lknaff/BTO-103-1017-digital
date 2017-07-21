@@ -65,6 +65,9 @@
     let scene1     = anime.timeline();
 		let copyScene  = anime.timeline();
 		let finalScene = anime.timeline();
+		anime.easings['myCustomEasingName'] = function(t) {
+  		return Math.pow(Math.sin(t * 3), 3);
+		}
 
     scene1
       .add({
@@ -106,14 +109,20 @@
 		finalScene
 			.add({
 				targets: '#cta',
-				translateY: -12,
-				elasticity: 100,
 				opacity: 1,
 				offset: 2000
+			})
+			.add({
+				targets: '#cta',
+				scale: 1.1,
+				easing: 'myCustomEasingName',
+				elasticity: 700,
+				duration: 500,
+				offset: 3500
 			});
 
 		var banner = this;
-		setTimeout(function(){banner.end();}, 2100);
+		setTimeout(function(){banner.end();}, 3000);
 
 	};
 
@@ -155,15 +164,16 @@
 
 	Banner.prototype.onMouseOver = function()
 	{
+		anime.easings['myCustomEasingName'] = function(t) {
+  		return Math.pow(Math.sin(t * 3), 3);
+		}
+
 		anime({
 			targets: '#cta',
 			scale: 1.1,
-			translateY: 0,
-			direction: 'alternate',
-			easing: 'easeOutQuart',
+			easing: 'myCustomEasingName',
 			elasticity: 700,
-			duration: 125,
-			loop: 1
+			duration: 500,
 		});
 	};
 
