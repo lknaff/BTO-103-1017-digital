@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+      <meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+  		<meta name="viewport" content="width=300, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+  		<meta name="ad.size" content = "width=300, height=600">
+
+		  <title>BTO-104: Biking 300x600</title>
+
+		  <script src="https://s0.2mdn.net/ads/studio/Enabler.js"> </script>
+
+		<style>
+			/* classes */
+			.pos-absolute { position: absolute; }
+
+			.animated-content {
+				position: absolute;
+				overflow: hidden;
+				width:300px;
+				height:600px;
+				top:0;
+			}
+
+			.mask {
+				position: absolute;
+				overflow: hidden;
+			}
+
+			/* IDs */
+			#bg-exit { background-color:#fff; cursor: pointer; z-index: 99999; }
+			#banner { background-color:#222; overflow:hidden; }
+			#border { border:1px solid #222; opacity:0; }
+			#banner:hover { cursor: hand; }
+
+			#bg { background: transparent url('images/BG.jpg') no-repeat 0px 0px; top: 0px; left: 0px; opacity: 0; height: 600px; width: 340px; transform-origin: left bottom;}
+			#bg2 { background: transparent url('images/BG2.png') no-repeat 0px 0px; top: 0px; left: 0px; opacity: 0; height: 600px; transform-origin: left bottom;}
+
+      #copy-mask { overflow: hidden; width: 300px; height: 99px; position: absolute; top: 0px;}
+
+			#copybg { background: transparent url('images/sprite.png') no-repeat 0px -8px; height: 100px; top: 0px; left: -300px; opacity: 0;}
+			#copy { background: transparent url('images/sprite.png') no-repeat -31px -106px; height: 85px;  top: 10px; left: -300px; opacity: 0;}
+
+      #cta { background: transparent url('images/cta.png') no-repeat 0px 0px; height: 34px;  top: 188px; left: 5px; opacity: 0; transform-origin: bottom left;}
+      #hover { background: transparent url('images/sprite.png') no-repeat -31px -225px; height: 39px;  top: 188px; opacity: 0;}
+
+		</style>
+    </head>
+
+    <body>
+    	<div id = "container">
+    		<div id = "border" class = "pos-absolute"></div>
+	    	<div id = "banner" class = "pos-absolute">
+		    	<div id = "content" class = "pos-absolute">
+
+		    		<div id = "hero-wrapper" class = "animated-content">
+		    			<div id = "bg" class = "animated-content"></div>
+		    			<div id = "bg2" class = "animated-content"></div>
+		    		</div>
+
+            <div id="copy-mask">
+              <div id = "copybg" class = "animated-content"></div>
+              <div id = "copy" class = "animated-content"></div>
+            </div>
+
+            <div id = "cta" class = "animated-content"></div>
+            <div id = "hover" class = "animated-content"></div>
+
+		    	</div>
+	    	</div>
+
+	    	<div id="bg-exit" class = "pos-absolute"></div>
+	    </div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+		<script src="js/jquery.transit.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/banner.js"></script>
+		<script type="text/javascript">
+
+			var clickTag = "http://www.gobreck.com/";
+
+			$(document).ready(function()
+			{
+				if (Enabler.isInitialized())
+				{
+					enablerInitComplete();
+				} else {
+					Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitComplete);
+				}
+
+				function enablerInitComplete()
+				{
+					if (Enabler.isPageLoaded())
+					{
+					    pageLoadComplete();
+					} else {
+						Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, pageLoadComplete);
+					}
+
+					function pageLoadComplete()
+					{
+					    var banner = new Banner();
+						banner.render();
+					}
+				}
+			});
+
+		</script>
+    </body>
+</html>
