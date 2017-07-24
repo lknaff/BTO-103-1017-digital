@@ -94,6 +94,13 @@
 			.add({
 				targets: '#copybg',
 				translateX: 279,
+				opacity: .66,
+				elasticity: 100,
+				offset: 400
+			})
+			.add({
+				targets: '#copybg2',
+				translateX: 279,
 				opacity: 1,
 				elasticity: 100,
 				offset: 400
