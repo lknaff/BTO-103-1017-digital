@@ -11,8 +11,8 @@
 	{
 		this.__allowHoverEffect = false;
 		this.__loopCount = 0;
-		this.__width = 300;
-		this.__height = 600;
+		this.__width = 970;
+		this.__height = 250;
 		this.start();
 	};
 
@@ -83,43 +83,50 @@
 			.add({
 				targets: '#bg',
 				translateX: {
-          value: -15,
+          value: -25,
           duration: 3500,
           easing: 'linear',
         },
 				offset: 0
 			});
 
-			// copyScene
-			// .add({
-			// 	targets: '#copybg',
-			// 	translateX: 279,
-			// 	opacity: 1,
-			// 	elasticity: 100,
-			// 	offset: 400
-			// })
-			// .add({
-			// 	targets: '#copy',
-			// 	translateX: 300,
-			// 	elasticity: 100,
-			// 	opacity: 1,
-			// 	offset: 500
-			// });
-		//
-		// finalScene
-		// 	.add({
-		// 		targets: '#cta',
-		// 		opacity: 1,
-		// 		offset: 2000
-		// 	})
-		// 	.add({
-		// 		targets: '#cta',
-		// 		scale: 1.1,
-		// 		easing: 'myCustomEasingName',
-		// 		elasticity: 700,
-		// 		duration: 500,
-		// 		offset: 2100
-		// 	});
+			copyScene
+			.add({
+				targets: '#copybg',
+				translateX: 890,
+				opacity: 1,
+				elasticity: 100,
+				offset: 400
+			})
+			.add({
+				targets: '#copybg2',
+				translateX: 890,
+				opacity: 1,
+				elasticity: 100,
+				offset: 400
+			})
+			.add({
+				targets: '#copy',
+				translateX: 300,
+				elasticity: 100,
+				opacity: 1,
+				offset: 700
+			});
+
+		finalScene
+			.add({
+				targets: '#cta',
+				opacity: 1,
+				offset: 2000
+			})
+			.add({
+				targets: '#cta',
+				scale: 1.1,
+				easing: 'myCustomEasingName',
+				elasticity: 700,
+				duration: 500,
+				offset: 2100
+			});
 
 		var banner = this;
 		setTimeout(function(){banner.end();}, 3000);
