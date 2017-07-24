@@ -11,8 +11,8 @@
 	{
 		this.__allowHoverEffect = false;
 		this.__loopCount = 0;
-		this.__width = 300;
-		this.__height = 600;
+		this.__width = 320;
+		this.__height = 50;
 		this.start();
 	};
 
@@ -28,8 +28,8 @@
 	{
 		this.__container = $("#container");
 		this.__border = $("#border");
-		this.__cta = $("#cta");
-		this.__hover = $("#hover");
+		// this.__cta = $("#cta");
+		// this.__hover = $("#hover");
 		this.__banner = $("#banner");
 		this.__content = $("#content");
 
@@ -83,28 +83,28 @@
 			.add({
 				targets: '#bg',
 				translateX: {
-          value: -15,
+          value: -10,
           duration: 3500,
           easing: 'linear',
         },
 				offset: 0
 			});
 
-			// copyScene
-			// .add({
-			// 	targets: '#copybg',
-			// 	translateX: 279,
-			// 	opacity: 1,
-			// 	elasticity: 100,
-			// 	offset: 400
-			// })
-			// .add({
-			// 	targets: '#copy',
-			// 	translateX: 300,
-			// 	elasticity: 100,
-			// 	opacity: 1,
-			// 	offset: 500
-			// });
+			copyScene
+			.add({
+				targets: '#copybg',
+				translateX: 305,
+				opacity: 1,
+				elasticity: 100,
+				offset: 400
+			})
+			.add({
+				targets: '#copy',
+				translateX: 300,
+				elasticity: 100,
+				opacity: 1,
+				offset: 500
+			});
 		//
 		// finalScene
 		// 	.add({
@@ -121,8 +121,8 @@
 		// 		offset: 2100
 		// 	});
 
-		var banner = this;
-		setTimeout(function(){banner.end();}, 3000);
+		// var banner = this;
+		// setTimeout(function(){banner.end();}, 3000);
 
 	};
 
