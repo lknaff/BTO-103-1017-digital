@@ -93,14 +93,14 @@
 			copyScene
 			.add({
 				targets: '#copybg',
-				translateX: 890,
+				translateX: 865,
 				opacity: 1,
 				elasticity: 100,
 				offset: 400
 			})
 			.add({
 				targets: '#copybg2',
-				translateX: 890,
+				translateX: 865,
 				opacity: 1,
 				elasticity: 100,
 				offset: 400
@@ -110,7 +110,7 @@
 				translateX: 300,
 				elasticity: 100,
 				opacity: 1,
-				offset: 700
+				offset: 900
 			});
 
 		finalScene
