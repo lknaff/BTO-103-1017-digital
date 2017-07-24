@@ -12,7 +12,7 @@
 		this.__allowHoverEffect = false;
 		this.__loopCount = 0;
 		this.__width = 300;
-		this.__height = 250;
+		this.__height = 600;
 		this.start();
 	};
 
@@ -93,14 +93,21 @@
 			copyScene
 			.add({
 				targets: '#copybg',
-				translateX: 279,
+				translateX: 298,
+				opacity: 1,
+				elasticity: 100,
+				offset: 400
+			})
+			.add({
+				targets: '#copybg2',
+				translateX: 298,
 				opacity: 1,
 				elasticity: 100,
 				offset: 400
 			})
 			.add({
 				targets: '#copy',
-				translateX: 300,
+				translateX: 304,
 				elasticity: 100,
 				opacity: 1,
 				offset: 500
